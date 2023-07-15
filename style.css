@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap") format("woff2");
+  font-display: swap;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+header {
+  display: block;
+}
+
+body {
+  background: linear-gradient(to right, #1F0606, #360000, #1F0606, #000);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.49);
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  margin-left: 95px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.main-nav__list-item {
+  text-transform: uppercase;
+  font-size: 17px;
+  letter-spacing: 2px;
+  line-height: 23px;
+}
+
+.main-nav__list-item:first-child {
+  margin-left: 50px;
+}
