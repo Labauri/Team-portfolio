@@ -1,16 +1,7 @@
 @font-face {
   font-family: "Inter", sans-serif;
-  font-style: normal;
   font-weight: 400;
   src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap") format("woff2");
   font-display: swap;
 }
 
@@ -23,10 +14,7 @@ body, html {
 .container {
   overflow-y: auto;
   min-height: 100vh;
-}
-
-header {
-  display: block;
+  z-index: -5;
 }
 
 body {
@@ -54,6 +42,7 @@ a {
   margin-left: 95px;
   margin-top: 40px;
   align-items: center;
+  z-index: 8;
 }
 
 .main-nav__list {
@@ -64,11 +53,60 @@ a {
   gap: 50px;
 }
 
+.main-nav__link {
+  transition: all 0.6s ease;
+  z-index: 7;
+}
+
+.main-nav__link:hover {
+  filter: brightness(150%);
+  transition: all 0.6s ease;
+}
+
+.main-nav__link:active {
+  transform: scale(0.8);
+  transition: all 0.6s ease;
+}
+
 .main-nav__list-item {
   text-transform: uppercase;
   font-size: 17px;
   letter-spacing: 1px;
   line-height: 23px;
+}
+
+.main-nav__list-link {
+  position: relative;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.main-nav__list-link:hover {
+  color: #ffffff;
+}
+
+.main-nav__list-link:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.5s;
+  transform-origin: left;
+}
+
+.main-nav__list-link::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.main-nav__list-link:active {
+  color: rgba(255, 255, 255, 0.49);
+  transition: all 0.3s ease;
 }
 
 .main-nav__list-item:first-child {
@@ -100,6 +138,26 @@ a {
   width: 550px;
   margin-block-start: 0;
   margin-block-end: 0;
+  background-color: #ffffff;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorAnimation 4s linear infinite;
+}
+
+@keyframes colorAnimation {
+  0%, 100% {
+    color: #1F0606;
+    background-color: #1F0606;
+  }
+  33% {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+  66% {
+    color: #880000;
+    background-color: #880000;
+  }
 }
 
 .text-exclusive {
@@ -142,25 +200,77 @@ a {
   position: relative;
   width: 300px;
   height: 150px;
-  margin-left: 50px;
+  margin-left: 150px;
+  z-index: 6;
 }
 
-.section-ellipse__arrow {
+.outer-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin-top: 40px;
+  transition: background-color 0.3s ease;
+  transition: all 0.6s ease;
+  overflow: hidden;
+  cursor: pointer;
+  transform: scale(1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outer-circle:hover {
+  border-color: #360000;
+  box-shadow: 0 0 10px #880000;
+}
+
+.outer-circle:active {
+  transition: transform 0.3s ease;
+  transform: scale(0.9);
+}
+
+.inner-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65px;
-  height: 65px;
+  transition: background-color 0.3s ease;
 }
 
-.section-arrow__see {
+.outer-circle:hover .inner-circle .arrow {
+  transition: all 0.3s ease;
+  animation: rainbow 2s linear infinite; /* Анимация изменения цвета стрелки */
+  filter: brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); /* Применение фильтра яркости при наведении */
+}
+
+.arrow {
+  width: 50px;
+  height: 30px;
+  background-image: url(images/arrow-see.svg);
+  background-repeat: no-repeat;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35px;
-  height: 35px;
+  top: 18%;
+  left: 18%;
+  transition: all 0.6s ease;
+}
+
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); }
+  100% { filter: hue-rotate(360deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); }
+}
+
+.outer-circle:hover .arrow {
+  border-color: #360000;
+  transition: all 0.6s ease;
+  /* filter: brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); Сброс фильтра яркости при наведении */
 }
 
 .section-see__text {
@@ -171,8 +281,8 @@ a {
   color: #ffffff;
   font-size: 20px;
   line-height: 40px;
-  margin-top: 53px;
-  margin-left: 200px;
+  margin-top: 55px;
+  margin-left: 20px;
   margin-block-end: 0;
 }
 
@@ -233,8 +343,54 @@ a {
   bottom: 80px;
 }
 
+.pagination-container {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  margin-top: 130px;
+  margin-left: 130px;
+}
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5px;
+  background-color: #676767;
+  border-radius: 2px;
+  overflow: hidden;
+}
 
+.pagination-slider {
+  width: 33.33%;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.pagination-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-family: Kaisei Tokumin;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.pagination-item:last-child {
+  margin-left: 15px;
+}
+
+.pagination-item.active {
+  color: #333;
+}
 
 
 
