@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Team Portfolio</title>
+</head>
+<body>
+  <div class="container">
+    <header class="main-header">
+      <nav class="main-nav">
+        <a href="main.html" class="main-nav__link">
+          <img class="main__image" src="images/decor.svg" width="40" height="40" alt="Продукция кота">
+        </a>
+        <ul class="main-nav__list">
+          <li class="main-nav__list-item main-nav__list-item--current">
+            <a href="#" class="main-nav__list-link">About</a>
+          </li>
+          <li class="main-nav__list-item">
+            <a href="#" class="main-nav__list-link">Gallery</a>
+          </li>
+          <li class="main-nav__list-item">
+            <a href="#" class="main-nav__list-link">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="section-text">
+      <div class="section-block">
+        <h3 class="section-text__version">Our version</h3>
+        <h1 class="title-exclusive">Atm</h1>
+        <p class="text-exclusive">Our hobby is a modern and convenient design, the key to successful communication with the client.</p>
+      </div>
+    </section>
+    <section class="section-see__page">
+      <div class="outer-circle" onclick="changePage('main.html')">
+        <a href="#"></a>
+        <div class="inner-circle">
+          <div class="arrow">
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+      <a class="section-see__text" href="JavaScript:void(0);" onclick="changePage('main.html')">See More</a>
+    </section>
+    <section class="section-pagination__bar">
+      <section class="section-pagination__bar">
+        <div class="pagination-container">
+          <div class="pagination-item" onclick="changePage('page3.html')">02</div>
+          <div class="pagination">
+            <div class="pagination-slider" style="transform: translateX(200%)" data-slide-index="0"></div>
+          </div>
+          <div class="pagination-item" onclick="changePage('main.html')">03</div>
+        </div>
+      </section>
+  </div>
+  <script src="port.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>

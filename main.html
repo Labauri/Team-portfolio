@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
-    <title>Portfolio</title>
+    <title>Team Portfolio</title>
 </head>
-<body>
+<body class="block-page-one">
   <div class="container">
     <header class="main-header">
       <nav class="main-nav">
@@ -36,12 +38,15 @@
       </div>
     </section>
     <section class="section-see__page">
-      <div class="outer-circle">
+      <div class="outer-circle" onclick="changePage('page2.html')">
+        <a href="#"></a>
         <div class="inner-circle">
-          <div class="arrow"></div>
+          <div class="arrow">
+            <a href="#"></a>
+          </div>
         </div>
       </div>
-      <h3 class="section-see__text">See More</h3>
+      <a class="section-see__text" href="#">See More</a>
     </section>
     <section class="section-ellipse__small">
       <svg class="section-ellipse__image" viewBox="0 0 338 144" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,11 +77,11 @@
     </section>
     <section class="section-pagination__bar">
       <div class="pagination-container">
-        <div class="pagination-item">01</div>
+        <div class="pagination-item" onclick="changePage('main.html')">01</div>
         <div class="pagination">
-          <div class="pagination-slider" style="transform: translateX(0%)"></div>
+          <div class="pagination-slider" style="transform: translateX(0%)" data-slide-index="0"></div>
         </div>
-        <div class="pagination-item">03</div>
+        <div class="pagination-item" onclick="changePage('page2.html')">03</div>
       </div>
     </section>
     <section class="section-main__pictures">
@@ -112,6 +117,8 @@
       </div>
     </section>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="port.js"></script>
 </body>
 </html>
