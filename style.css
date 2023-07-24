@@ -31,6 +31,13 @@ body, html {
   transition: all 0.3s ease;
 }
 
+.block-page-three {
+  background: linear-gradient(to right, #5e36f5, #681fc7, #681fc7, #681fc7, #5e36f5, #5e36f5, #5e36f5, #5e36f5, #681fc7, #601374);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -187,6 +194,25 @@ a {
   }
 }
 
+.title-exclusive-three {
+  animation: colorAnimationThree 4s linear infinite;;
+}
+
+@keyframes colorAnimationThree {
+  0%, 100% {
+    color: #681fc7;
+    background-color: #681fc7;
+  }
+  33% {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+  66% {
+    color: #5e36f5;
+    background-color: #5e36f5;
+  }
+}
+
 .text-exclusive {
   font-weight: 400;
   font-family: "Inter", sans-serif;
@@ -257,6 +283,11 @@ a {
   box-shadow: 0 0 10px #355279;
 }
 
+.outer-circle-three:hover {
+  border-color: #5e36f5;
+  box-shadow: 0 0 10px #681fc7;
+}
+
 .outer-circle:active {
   transform: scale(0.9);
 }
@@ -283,6 +314,11 @@ a {
   animation: rainbowTwo 2s linear infinite;
 }
 
+.outer-circle-three:hover .inner-circle-three .arrow-three {
+  transition: all 0.3s ease;
+  animation: rainbowThree 2s linear infinite;
+}
+
 .arrow {
   width: 50px;
   height: 30px;
@@ -298,12 +334,21 @@ a {
   color: #355279;
 }
 
+.arrow-three {
+  color: #681fc7;
+}
+
 @keyframes rainbow {
   0% { filter: hue-rotate(0deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); }
   100% { filter: hue-rotate(360deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(334deg) brightness(89%) contrast(90%); }
 }
 
 @keyframes rainbowTwo {
+  0% { filter: hue-rotate(0deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(203deg) brightness(89%) contrast(90%); }
+  100% { filter: hue-rotate(360deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(203deg) brightness(89%) contrast(90%); }
+}
+
+@keyframes rainbowThree {
   0% { filter: hue-rotate(0deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(203deg) brightness(89%) contrast(90%); }
   100% { filter: hue-rotate(360deg) brightness(0) saturate(100%) invert(37%) sepia(96%) saturate(2854%) hue-rotate(203deg) brightness(89%) contrast(90%); }
 }
@@ -315,6 +360,11 @@ a {
 
 .outer-circle-two:hover .arrow {
   border-color: #4970A4;
+  transition: all 0.3s ease;
+}
+
+.outer-circle-three:hover .arrow {
+  border-color: #5e36f5;
   transition: all 0.3s ease;
 }
 
@@ -395,6 +445,16 @@ a {
   width: auto;
   height: auto;
   right: 100px;
+  bottom: 80px;
+}
+
+.section-main_black-man {
+  position: absolute;
+  z-index: 4;
+  max-width: 30%;
+  width: auto;
+  height: auto;
+  right: 80px;
   bottom: 80px;
 }
 
